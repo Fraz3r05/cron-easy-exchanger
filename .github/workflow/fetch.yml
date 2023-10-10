@@ -1,0 +1,12 @@
+on:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Warmup
+        run: curl https://easy-exchanger.vercel.app/api/offers
+      - name: Fetch Data
+        run: curl -XPOST -H "Content-type: application/json" -d '{'returnImmediately': true, maxMessages: 1}' 'urlHere'
