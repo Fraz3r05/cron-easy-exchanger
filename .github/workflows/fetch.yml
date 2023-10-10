@@ -3,7 +3,7 @@ on:
     - cron: '*/20 4-23 * * *'
   
 jobs:
-  test_schedule:
+  Fetch_Easy_Exchange_Data:
     runs-on: ubuntu-latest
     steps:
       - name: Warmup
