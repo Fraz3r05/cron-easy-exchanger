@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/10 * * * *"
 
 jobs:
   test_schedule:
@@ -8,5 +8,3 @@ jobs:
     steps:
       - name: Warmup
         run: curl https://easy-exchanger.vercel.app/api/offers
-      - name: Fetch Data
-        run: curl -XPOST -H "Content-type: application/json" -d '{'returnImmediately': true, maxMessages: 1}' 'https://easy-exchanger.vercel.app/api/push'
