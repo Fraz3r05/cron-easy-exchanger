@@ -8,8 +8,6 @@ jobs:
       - name: Warmup
         run: curl https://easy-exchanger.vercel.app/api/offers
       - name: Fetch Data
-        run: echo "FETCHED_DATA=$(curl -i https://easy-exchanger.vercel.app/api/fetch|tr -d '\n')" >> $GITHUB_ENV
+        run: echo "FETCHED_DATA=$(curl -s https://easy-exchanger.vercel.app/api/fetch|tr -d '\n')" >> $GITHUB_ENV
       - name: print data
         run: echo $FETCHED_DATA
-      - name: Push Data to Database
-        run: "curl -XPOST -H 'Content-type: application/json' -d $FETCHED_DATA 'https://easy-exchanger.vercel.app/api/push'"
