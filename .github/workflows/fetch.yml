@@ -8,4 +8,4 @@ jobs:
       - name: Warmup
         run: curl https://easy-exchanger.vercel.app/api/offers
       - name: Fetch Data
-        run: "curl -XPOST -H 'Content-type: application/json' -d '[]' 'https://easy-exchanger.vercel.app/api/push'"
+        run: "curl -XPOST -H 'Content-type: application/json' -d `curl -i https://easy-exchanger.vercel.app/api/fetch` 'https://easy-exchanger.vercel.app/api/push'"
