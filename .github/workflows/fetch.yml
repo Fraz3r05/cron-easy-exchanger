@@ -12,4 +12,4 @@ jobs:
       - name: print data
         run: echo $FETCHED_DATA
       - name: Push Data to Database
-        run: "curl -XPOST -H 'Content-type: application/json' -d $FETCHED_DATA 'https://easy-exchanger.vercel.app/api/push'"
+        run: "curl -XPOST -H 'Content-type: application/json' -d '$FETCHED_DATA' 'https://easy-exchanger.vercel.app/api/push'"
