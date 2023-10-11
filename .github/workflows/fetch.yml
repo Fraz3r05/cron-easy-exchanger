@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Warmup
-        run: curl https://easy-exchanger.vercel.app/api/last-snapshot-info
+        run: curl https://easy-exchanger.vercel.app/api/keep-alive
       - name: Fetch Data
         run: echo "FETCHED_DATA=$(curl -s https://easy-exchanger.vercel.app/api/fetch|tr -d '\n')" >> $GITHUB_ENV
       - name: print data
